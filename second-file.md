@@ -75,6 +75,8 @@ Global用于定义全局的角色，即用户在团队中的角色；而module�
 5.1	数据库存储角色
 角色存储位置：server/data/model/team/team.role.js
 各个字段释义：
+
+```javascript
 team: Schema.Types.ObjectId,
         	role_group: Schema.Types.ObjectId,//角色分组，为系统角色字段
         	name: {type: String, default: ""},
@@ -102,18 +104,22 @@ misssion:{
 “value”:“0000”
 }
 }
+```
+
 当它为模块角色时，priviliges是一个对象，内部有一个value属性，value的值即为各个权限的拼接字段。
 事例如下：
+
+```javascript
 	privileges:{
 		value:’0000000111111111111’
 };
+```
+
 5.2	权限的获取和计算
 用户登录账户后，根据用户设置的权限，获取自己可操作的模块；
 系统角色的获取
-接口：get /api/team
-方法：privileges.base.getCombinedGlobalPrivilegesByUser()
-combine
-
+接口：`get /api/team`
+方法：`privileges.base.getCombinedGlobalPrivilegesByUser()`
  
  
 
