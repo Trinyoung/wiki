@@ -1,10 +1,7 @@
 <!-- TITLE: First File -->
 <!-- SUBTITLE: A quick summary of First File -->
 
-
-# ```text
 # 角色的获取和权限的计算
-# ```
 
 1	权限和角色的理解
 角色的不同，在于该角色下所赋予的权限的不同。用户因被赋予了角色，所以在系统中，才拥有了各种各样的权限。
