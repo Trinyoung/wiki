@@ -78,31 +78,32 @@ Global用于定义全局的角色，即用户在团队中的角色；而module�
 
 ```javascript
 team: Schema.Types.ObjectId,
-        	role_group: Schema.Types.ObjectId,//角色分组，为系统角色字段
-        	name: {type: String, default: ""},
-        	icon: {type: String , default: ""},
-        	is_system: {type: Number, default: core.constant.isSystem.no}, //是否为系统默认
+role_group: Schema.Types.ObjectId,//角色分组，为系统角色字段
+name: {type: String, default: ""},
+icon: {type: String , default: ""},
+is_system: {type: Number, default: core.constant.isSystem.no}, //是否为系统默认
 type: {type: Number, default: core.constant.team.roleType.normal}, //角色类型，该字段现在基本已经废弃不用；
-        	position: {type: Number},
-        	desc: {type: String, default: ""},
-        	is_deleted: {type: Number, default: 0},
-        	created_at: {type: Number, default: core.util.getNowTime},
-        	created_by: {type: String, default: ""},
-        	updated_at: {type: Number, default: core.util.getNowTime},
-        	updated_by: {type: String, default: ""},
-        	is_disabled: {type: Number, default: core.constant.isDisabled.no},
-        	category: {type: Number, default: core.constant.roleType.global}, //全局／模块内
-        	is_default: {type: Number, default: core.constant.is.no},
-        	module: {type: Number},//指向模块，为模块角色字段；如果是null或者undefined则为系统角色；
-			privileges: {type:Schema.Object.fixed},
+position: {type: Number},
+desc: {type: String, default: ""},
+is_deleted: {type: Number, default: 0},
+created_at: {type: Number, default: core.util.getNowTime},
+created_by: {type: String, default: ""},
+updated_at: {type: Number, default: core.util.getNowTime},
+updated_by: {type: String, default: ""},
+is_disabled: {type: Number, default: core.constant.isDisabled.no},
+category: {type: Number, default: core.constant.roleType.global}, //全局／模块内
+is_default: {type: Number, default: core.constant.is.no},
+module: {type: Number},//指向模块，为模块角色字段；如果是null或者undefined则为系统角色；
+privileges: {type:Schema.Object.fixed},
+
 //privileges是一个复合类型的结构，当该角色为系统角色时，privileges是一个对象，内部属性为模块的属性，和数据范围，以及范围修改人及修改时间等信息；事例如下：
 Privilges:{
-misssion:{
-“scope_updated_by”: "831424a2ea4b4031862fb4bc6f150a07",(uid)
-“scope_updated_at”: 1491907530,（时间戳）
-“scope”:100,
-“value”:“0000”
-}
+			misssion:{
+			“scope_updated_by”: "831424a2ea4b4031862fb4bc6f150a07",(uid)
+			“scope_updated_at”: 1491907530,（时间戳）
+			“scope”:100,
+			“value”:“0000”
+			}
 }
 ```
 
