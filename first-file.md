@@ -28,9 +28,11 @@ I18n这个文件中，进行了定义；
 
 1.1.2 模块权限
 
-```text
+
+```javascript
+
 Module：{
-message: { //模块名
+  message: { //模块名
                 	__display_position: 100,//模块位置
                 	create_public_channel: {//权限名
                     __display_position: 100,//显示的位置
@@ -38,9 +40,10 @@ message: { //模块名
                     __admin_default: __.is.yes,
                     key: 'create_public_channel’//键名
                 },
-```
 
 }
+```
+
 Global和module定义的方式是完全一样的，区别在于两者的使用场景并不一致；
 Global用于定义全局的角色，即用户在团队中的角色；而module则是定义在用户在各个模块中角色，通过角色来定义每个人的权限。
 
