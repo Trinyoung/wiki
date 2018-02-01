@@ -3,11 +3,13 @@
 
 # 角色的获取和权限的计算
 
-1	权限和角色的理解
+1. * 1	权限和角色的理解
 角色的不同，在于该角色下所赋予的权限的不同。用户因被赋予了角色，所以在系统中，才拥有了各种各样的权限。
 1.1 权限的定义
 定义于sever/core/constant.js；
 1.1.1	全局权限（全局角色权限）
+
+```javascript
 global: {
             	message: { //模块名
                 	__display_position: 100,//模块位置
@@ -18,6 +20,8 @@ global: {
                     key: 'create_public_channel’//键名
                 },
 			}
+```
+
 	Get /api/team/roles/:roleId/privileges通过该接口获取数据，展示到前台页面；
 其中一点要注意，展示到前端中文释义是怎么来的？
 I18n这个文件中，进行了定义；
